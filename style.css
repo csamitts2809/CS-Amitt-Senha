@@ -1,0 +1,35 @@
+:root {
+    --primary-blue: #0a2540;
+    --accent-gold: #c5a059;
+    --light-grey: #f6f9fc;
+}
+
+body { font-family: 'Arial', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+
+.container { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: white; border-bottom: 2px solid var(--accent-gold); }
+
+.logo { font-weight: bold; font-size: 1.5rem; color: var(--primary-blue); letter-spacing: 2px; }
+
+nav ul { list-style: none; display: flex; gap: 30px; }
+
+nav a { text-decoration: none; color: var(--primary-blue); font-weight: 600; }
+
+.hero { background: linear-gradient(rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.9)), url('lucknow-skyline.jpg'); background-size: cover; color: white; text-align: center; padding: 100px 10%; }
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+
+.cta-button { background: var(--accent-gold); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+
+.services { padding: 60px 10%; background: var(--light-grey); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+.card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-blue); }
+
+.contact { padding: 60px 10%; text-align: center; }
+
+form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+
+input, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+
+button { background: var(--primary-blue); color: white; padding: 15px; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; }
