@@ -1,0 +1,22 @@
+body {
+    /* 1. Link your image here */
+    background-image: url('');
+    
+    /* 2. Scale it to be big but contained */
+    background-size: 50vmin; /* Adjust this value (e.g., 60vmin or 500px) to make it bigger or smaller */
+    
+    /* 3. Center the image perfectly */
+    background-position: center center;
+    
+    /* 4. Prevent the logo from repeating like a grid */
+    background-repeat: no-repeat;
+    
+    /* 5. Keep it fixed in the center so text scrolls over it */
+    background-attachment: fixed;
+    
+    /* Optional: Fallback background color for your site */
+    background-color: #f8f9fa; 
+    
+    /* Ensures smooth text readability */
+    color: #333333;
+}
