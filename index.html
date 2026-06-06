@@ -375,5 +375,159 @@
     </script>
 
 </body>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Amitt Senha | Practising Company Secretary</title>
+    <style>
+        /* ========================================== */
+        /* DISCLAIMER POP-UP STYLES                   */
+        /* ========================================== */
+        
+        /* Full-screen background overlay that locks the page */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Dark transparent background */
+            backdrop-filter: blur(5px); /* Blurs out the main website behind it */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999; /* Higher than absolutely everything else */
+        }
+
+        /* The white box container for the text */
+        .modal-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            text-align: justify;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            border-top: 6px solid #d32f2f; /* Professional red accent top border */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Disclaimer Title */
+        .modal-content h2 {
+            color: #d32f2f; /* Bold Red Title */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        /* Legal Body Text */
+        .modal-text {
+            color: #333333; /* Dark gray for easy readability */
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .modal-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Container for the control buttons */
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Common Button Properties */
+        .modal-btn {
+            flex: 1;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        /* Agree Action Button (Red) */
+        #agree-button {
+            background-color: #d32f2f;
+            color: #ffffff;
+            border: none;
+        }
+
+        #agree-button:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Disagree Action Button (Outline Grey) */
+        #disagree-button {
+            background-color: #ffffff;
+            color: #666666;
+            border: 1px solid #cccccc;
+        }
+
+        #disagree-button:hover {
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="disclaimer-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>DISCLAIMER</h2>
+            
+            <div class="modal-text">
+                <p>The contents of this website are intended solely for informational purposes and do not constitute professional, legal, financial, or secretarial advice. Visitors are advised not to act upon any information contained herein without seeking specific professional advice based on their individual facts and circumstances.</p>
+                
+                <p>Accessing or using this website, including sending inquiries through it, does not create a professional-client relationship between the visitor and the CS Amitt Senha Practising Company Secretary. Such a relationship shall arise only upon formal engagement through a written engagement letter or other mutually agreed terms.</p>
+                
+                <p>We shall not be liable for any loss, damage, liability, or consequences arising from reliance on the information available on this website.</p>
+            </div>
+
+            <div class="modal-buttons">
+                <button id="disagree-button" class="modal-btn">Disagree</button>
+                <button id="agree-button" class="modal-btn">I Agree & Proceed</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("disclaimer-modal");
+            const agreeBtn = document.getElementById("agree-button");
+            const disagreeBtn = document.getElementById("disagree-button");
+
+            // Forces the disclaimer modal to show EVERY single time the page is entered
+            modal.style.display = "flex";
+
+            // If user clicks "I Agree & Proceed"
+            agreeBtn.addEventListener("click", function() {
+                modal.style.display = "none"; // Simply hides the pop-up to show your site
+            });
+
+            // If user clicks "Disagree"
+            disagreeBtn.addEventListener("click", function() {
+                // Completely replaces the entire web page content with a blank white display
+                document.documentElement.innerHTML = `
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Access Denied</title>
+                    </head>
+                    <body style="background-color: #ffffff; margin: 0; padding: 0;">
+                        </body>
+                    </html>
+                `;
+            });
+        });
+    </script>
+</body>
 
 </html>
