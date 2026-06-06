@@ -98,10 +98,10 @@
             font-weight: 500;
         }
 
-        /* Services Section Buttons */
+        /* Services Grid Layout */
         .services-menu {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
             margin-bottom: 30px;
         }
@@ -111,12 +111,13 @@
             color: #002b49;
             border: 2px solid #002b49;
             padding: 15px 20px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             border-radius: 6px;
             transition: all 0.3s ease;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .service-btn:hover, .service-btn.active {
@@ -127,7 +128,7 @@
         /* Content Display Box */
         .service-display-box {
             background-color: white;
-            padding: 30px;
+            padding: 35px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-left: 5px solid #d4af37;
@@ -139,15 +140,13 @@
 
         .service-content.active {
             display: block; /* Show active content */
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.4s ease;
         }
 
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
+        .service-content h3 {
+            color: #002b49;
+            margin-top: 0;
+            font-size: 1.4rem;
         }
 
         /* Contact Us Section */
@@ -200,7 +199,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -214,6 +213,7 @@
             <a href="#about">About Me</a>
             <a href="#services">Our Services</a>
             <a href="#contact">Contact Us</a>
+            <a href="https://linkedin.com/in/amitt-senha-cs" target="_blank" style="color: #00a0dc;">LinkedIn ↗</a>
         </div>
     </nav>
 
@@ -245,132 +245,79 @@
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Corporate & Regulatory Advisory Services Section -->
         <section id="services">
-            <h2>Our Services</h2>
-            <p>Click on any service below to view our comprehensive offerings:</p>
+            <h2>Corporate & Regulatory Advisory Services</h2>
+            <p>Click on any capability below to review our focus parameters and execution framework:</p>
             
-            <!-- Buttons -->
+            <!-- 3x3 Grid Buttons Layout -->
             <div class="services-menu">
-                <button class="service-btn active" onclick="showService('governance', this)">Corporate Governance Audit</button>
-                <button class="service-btn" onclick="showService('advisory', this)">Corporate Law Advisory</button>
-                <button class="service-btn" onclick="showService('secretarial', this)">Secretarial Audit</button>
-                <button class="service-btn" onclick="showService('diligence', this)">Due Diligence</button>
+                <button class="service-btn active" onclick="showService('incorporation', this)">Company Incorporation & Business Structuring</button>
+                <button class="service-btn" onclick="showService('retainership', this)">Compliance Retainership Services</button>
+                <button class="service-btn" onclick="showService('due-diligence', this)">Legal & Secretarial Due Diligence</button>
+                <button class="service-btn" onclick="showService('governance-adv', this)">Corporate Governance Advisory</button>
+                <button class="service-btn" onclick="showService('fema', this)">FEMA & Cross-Border Compliance Services</button>
+                <button class="service-btn" onclick="showService('fundraising', this)">Investor Facilitation & Fundraising Support</button>
+                <button class="service-btn" onclick="showService('ipr', this)">Intellectual Property Rights (IPR) Support</button>
+                <button class="service-btn" onclick="showService('sec-audit', this)">Secretarial Audit & Compliance Management</button>
+                <button class="service-btn" onclick="showService('business-adv', this)">Business Advisory & Special Assignments</button>
             </div>
 
             <!-- Content Display Area -->
             <div class="service-display-box">
                 
-                <!-- 1. Corporate Governance Audit -->
-                <div id="governance" class="service-content active">
-                    <h3>Corporate Governance Audit</h3>
-                    <p>Corporate Governance Audit is an effective way to ensure that the company has complied with all the laws applicable and effective internal control systems, policies, procedures are implemented well to serve needs of all the stakeholders.</p>
-                    <p>We provide following services in respect of Corporate Governance Audit of Companies:</p>
-                    <ul>
-                        <li>To determine such procedure for assessing risks such as global, financial, general, economic, political, industry and company specific risks and to ensure adoption of such procedures to minimizing such risk.</li>
-                        <li>To provide for measures to monitor and review the effectiveness of the company’s internal audit function; and monitor the internal audit function’s independence and objectivity and the effectiveness of the internal audit process, taking into consideration relevant professional standards.</li>
-                        <li>To provide for such measures to ensure that company complies with applicable Laws in respect of the following:
-                            <ul>
-                                <li>Composition of the Board.</li>
-                                <li>Compensations of Directors including Non-Executive Directors.</li>
-                                <li>Meetings of Board and Committee Meetings.</li>
-                                <li>Composition of various Committees of the Board including Audit Committee.</li>
-                                <li>Code of Conduct and whether the Company has laid down the same to various levels in organization.</li>
-                                <li>Information including Financial Statements and results, Annual operating plans and Budgets, Show cause or demand or prosecution notices and such other materially important documents are placed before the Board.</li>
-                                <li>Disclosures and whether proper disclosures has been made regarding related party transactions, accounting treatment, risk management etc by the company as and when required.</li>
-                            </ul>
-                        </li>
-                    </ul>
+                <!-- 1. Company Incorporation & Business Structuring -->
+                <div id="incorporation" class="service-content active">
+                    <h3>Company Incorporation & Business Structuring</h3>
+                    <p>Every successful business begins with the right legal foundation. We assist entrepreneurs, startups, family businesses, and investors in establishing suitable business structures, including Private Limited Companies, Public Companies, One Person Companies (OPCs), Section 8 Companies, and Limited Liability Partnerships (LLPs). Our services cover end-to-end incorporation support, regulatory registrations, documentation, and post-incorporation compliance guidance, ensuring a smooth and legally compliant business launch.</p>
                 </div>
 
-                <!-- 2. Corporate Law Advisory -->
-                <div id="advisory" class="service-content">
-                    <h3>Corporate Law Advisory</h3>
-                    <p>Corporate law deals with the formation and operations of corporations and is related to commercial and contract law.</p>
-                    <p>We at Amitt Senha and Associates specialize in various Corporate Law advisory, compliance related and Due Diligence Services:</p>
-                    <ul>
-                        <li>Incorporation of Private, Public, Section 8 Company (Companies with Charitable Objects) and Limited Liability Partnerships (LLPs).</li>
-                        <li>Keeping records of and assistance for preparation of Secretarial and Statutory / Non-statutory records including Statutory Registers.</li>
-                        <li>Preparation and Alteration Of Memorandum of Association (MOA) and Articles Of Association (AOA).</li>
-                        <li>Issuing Compliance Certificate for Public, Private & Listed Companies.</li>
-                        <li>Obtaining Director Identification Number (DIN) and Digital Signature Certificate (DSC) for directors and professionals.</li>
-                        <li>Procedure for Issue of Preferential Shares / Private Placement.</li>
-                        <li>Holding various meetings including Board, General / Annual General, Class Meetings, Committee Meetings.</li>
-                        <li>Conversion of Private into Public Company and Vice versa as well as Conversion of LLP into Company and Vice versa.</li>
-                        <li>Procedures for Increase, consolidation, subdivision & reduction of Share Capital.</li>
-                        <li>Procedure for passing resolutions by postal ballot & providing scrutinizers’ report.</li>
-                        <li>Procedures for Appointment / resignation / removal of Auditors.</li>
-                        <li>Procedures for Alteration of name, Capital Clause and Object Clause of Memorandum of Association of a Company.</li>
-                        <li>Liaison with the offices of Registrar of Companies (ROC), Regional Director (RD), National Company Law Tribunal (NCLT), Ministry of Corporate Affairs (MCA), SEBI, Stock Exchanges for obtaining various regulatory approvals and stamp duty adjudication matters.</li>
-                        <li>Assistance in compliance with provisions of listing agreement entered with Stock Exchanges.</li>
-                        <li>Assistance in compliance with various Guidelines, Rules and Regulations issued by SEBI.</li>
-                        <li>Preparation, certification and filling of various e-forms on MCA Portal including Filing of Annual Return and Financial Statements.</li>
-                        <li>Mergers & Amalgamation, De-merger and Corporate financial restructuring.</li>
-                        <li>Application to various authorities like Insurance Regulatory and Development Authority of India (IRDAI), Reserve Bank of India for obtaining licenses.</li>
-                        <li>Periodical advisory services and/or retainer ship for Private Company /LLP / Closely held Company / Listed Company / Joint Venture Company / Section 8 Company for Company law related matters.</li>
-                        <li>Registration of business entities under Central/ State / Local Authorities.</li>
-                        <li>Listing of Shares and IPO/SME IPO’s.</li>
-                        <li>Procedure for forfeiture / surrender / lien of shares.</li>
-                        <li>Reconstitution of Board of Directors and committees thereof.</li>
-                        <li>Issue of share certificates including duplicate, splitting, consolidation, etc.</li>
-                        <li>Declaration and payment of dividend.</li>
-                        <li>Providing loans to directors, their relatives and other body corporates and such contracts or arrangements in which directors are interested.</li>
-                        <li>Payment of remuneration to Directors, their relatives and persons holding office or place of profit.</li>
-                        <li>Preparation of notices, agenda, minutes and resolutions for Board Meetings, Committees thereof, AGM, EGM, Statutory Meetings & reports thereof.</li>
-                        <li>Allotment of shares and filing of requisite forms in respect of the same.</li>
-                        <li>Stamp duty on issue of share certificates.</li>
-                        <li>Compliance of Public deposits.</li>
-                        <li>Buy-back of securities.</li>
-                        <li>Postal ballot.</li>
-                        <li>Corporate Governance and Appointment of Independent Directors.</li>
-                        <li>Transfer of funds to investor education and protection fund.</li>
-                        <li>Oppression and mismanagement.</li>
-                        <li>Creation of charge over assets of company.</li>
-                        <li>Issue of Convertible Redeemable Preference Share, Debentures, Bonds, etc.</li>
-                        <li>SEBI & Stock Exchange related matters including Listing / Delisting of securities.</li>
-                        <li>FIPB and/or RBI related approvals, advisory and related matters.</li>
-                        <li>NCLT/Highcourt Corporate law matters.</li>
-                        <li>Drafting of various legal agreements.</li>
-                        <li>Legal Due Diligence in Corporate Restructuring Matters.</li>
-                    </ul>
+                <!-- 2. Compliance Retainership Services -->
+                <div id="retainership" class="service-content">
+                    <h3>Compliance Retainership Services</h3>
+                    <p>Regulatory compliance is not a one-time activity but an ongoing responsibility. Our retainership services provide businesses with continuous professional support for corporate, secretarial, and regulatory matters. Acting as your extended compliance partner, we assist in maintaining statutory records, conducting periodic compliance reviews, advising management on regulatory developments, and ensuring timely filings under applicable laws.</p>
                 </div>
 
-                <!-- 3. Secretarial Audit -->
-                <div id="secretarial" class="service-content">
-                    <h3>Secretarial Audit</h3>
-                    <p>Secretarial Audit is a process to check compliance with – the provisions of various laws and Rules/Regulations/Procedures, maintenance of books, records etc, by an independent professional to ensure that the company has complied with the legal and procedural requirements and also followed due processes.</p>
-                    <p>At Amitt Senha and Associates, we conduct a detailed secretarial audit of various books, records of the company to –</p>
-                    <ul>
-                        <li>To Check Report on Compliances.</li>
-                        <li>To Protect the interest of the Customers, employees, society etc.</li>
-                        <li>To avoid any unwarranted legal actions by law enforcing agencies.</li>
-                        <li>To Point out Non-compliances and inadequate Compliances.</li>
-                        <li>To ensure that the legal and procedural requirements are duly complied with that strengthens the image and goodwill of a company.</li>
-                    </ul>
-                    <p>We take utmost care to issue secretarial audit report as we believe it is a very important tool for identifying and prioritizing controls and establishing risk appetite while also being an important way to extend confidence to various stakeholders including Investors, Management.</p>
+                <!-- 3. Legal & Secretarial Due Diligence -->
+                <div id="due-diligence" class="service-content">
+                    <h3>Legal & Secretarial Due Diligence</h3>
+                    <p>In today’s dynamic business environment, informed decisions require thorough verification and risk assessment. We conduct comprehensive legal and secretarial due diligence for mergers, acquisitions, investments, fundraising transactions, and strategic business decisions. Our reviews focus on statutory compliance, corporate records, governance practices, regulatory risks, and potential liabilities, helping stakeholders make confident and informed decisions.</p>
                 </div>
 
-                <!-- 4. Due Diligence -->
-                <div id="diligence" class="service-content">
-                    <h3>Due Diligence</h3>
-                    <p>Due diligence is examination of the background and financial condition, business operations and contractual obligations of an entity. It is done to establish a complete, accurate and reliable vision of the subject so that fact-based decisions can be made by another entity considering investment, business relationship, acquisition or litigation.</p>
-                    <p>At Amitt Senha and Associates, we focus on ways to enhance revenue and reduce cost, and implementing operational improvements in respect of various deals relating to takeover / merger / amalgamation.</p>
-                    <p>We focus on the critical elements of the transactions, including:</p>
-                    <ul>
-                        <li>Determining and quantifying various industry and deal-specific risks and opportunities.</li>
-                        <li>Identifying hidden costs, commitments and contingencies.</li>
-                        <li>Identifying basic framework of various laws.</li>
-                        <li>Highlighting various issues likely to affect the contract conditions.</li>
-                    </ul>
-                    <p>We also provide following services in respect of Due Diligence:</p>
-                    <ul>
-                        <li>To assist in obtaining necessary permissions from the requisite authorities.</li>
-                        <li>Identifying issues relating to structuring and documentation.</li>
-                        <li>Identifying legal and contractual impediments.</li>
-                        <li>Examination of issues and key areas that need to be addressed in the business plan and determining the impact of the same on the proposed transaction.</li>
-                        <li>To assist in preparation of various agreements like License Agreement, Subscription Agreement, Joint Venture Agreement, Supply Agreement, Service Agreement and such other documents.</li>
-                        <li>To assess the nature and extent of the risks and highlight them and to obtain all material information in relation to the issuer for making disclosures in an offer document or subscription agreement, to enable investors to make an informed decision and to meet regulatory requirements.</li>
-                    </ul>
+                <!-- 4. Corporate Governance Advisory -->
+                <div id="governance-adv" class="service-content">
+                    <h3>Corporate Governance Advisory</h3>
+                    <p>Strong governance frameworks create sustainable businesses and inspire stakeholder confidence. We assist companies in implementing robust corporate governance practices that promote transparency, accountability, ethical decision-making, and regulatory compliance. Our advisory services support boards, promoters, and management teams in establishing governance structures aligned with business objectives and regulatory expectations.</p>
+                </div>
+
+                <!-- 5. FEMA & Cross-Border Compliance Services -->
+                <div id="fema" class="service-content">
+                    <h3>FEMA & Cross-Border Compliance Services</h3>
+                    <p>Global business opportunities often involve complex foreign exchange regulations. We provide advisory and compliance support under the Foreign Exchange Management Act (FEMA) for foreign investments, overseas investments, share transfers involving non-residents, reporting requirements, and other cross-border transactions. Our objective is to help businesses navigate international transactions while remaining fully compliant with applicable regulations.</p>
+                </div>
+
+                <!-- 6. Investor Facilitation & Fundraising Support -->
+                <div id="fundraising" class="service-content">
+                    <h3>Investor Facilitation & Fundraising Support</h3>
+                    <p>Access to capital is critical for business growth. Through our network of professionals and investment associates, we facilitate connections between businesses and potential investors. We assist in preparing investment-ready documentation, conducting preliminary compliance reviews, and coordinating with stakeholders throughout the fundraising process, helping businesses present themselves effectively to prospective investors.</p>
+                </div>
+
+                <!-- 7. Intellectual Property Rights (IPR) Support -->
+                <div id="ipr" class="service-content">
+                    <h3>Intellectual Property Rights (IPR) Support</h3>
+                    <p>Innovation and brand value are among the most valuable assets of any business. Through our dedicated team of IPR professionals, we assist clients in protecting and managing intellectual property, including trademarks, copyrights, patents, and related rights. Our services are designed to safeguard business identity, innovation, and competitive advantage in an increasingly knowledge-driven economy.</p>
+                </div>
+
+                <!-- 8. Secretarial Audit & Regulatory Compliance Management -->
+                <div id="sec-audit" class="service-content">
+                    <h3>Secretarial Audit & Regulatory Compliance Management</h3>
+                    <p>Compliance is a critical component of corporate sustainability. We provide comprehensive secretarial and regulatory compliance support, including compliance audits, corporate restructuring assistance, board and shareholder meeting support, statutory documentation, and advisory services under various corporate laws. Our focus is to minimize regulatory risk and enable businesses to operate with confidence.</p>
+                </div>
+
+                <!-- 9. Business Advisory & Special Assignments -->
+                <div id="business-adv" class="service-content">
+                    <h3>Business Advisory & Special Assignments</h3>
+                    <p>Every business faces unique challenges requiring practical and legally sound solutions. We provide customized advisory services on corporate restructuring, capital transactions, governance matters, strategic regulatory planning, and other corporate law-related assignments. By combining legal insight with commercial understanding, we help businesses address complex situations efficiently and effectively.</p>
                 </div>
 
             </div>
@@ -385,13 +332,13 @@
                     <p><strong>Firm Name:</strong> Amitt Senha and Associates</p>
                     <p><strong>Email:</strong> <a href="mailto:csamitts@gmail.com">csamitts@gmail.com</a></p>
                     <p><strong>Mobile:</strong> <a href="tel:+919594493342">+91 9594493342</a></p>
+                    <p><strong>LinkedIn Profile:</strong> <a href="https://linkedin.com/in/amitt-senha-cs" target="_blank">linkedin.com/in/amitt-senha-cs ↗</a></p>
                     <p><strong>Office Address:</strong><br>
                     R-120 RGF, Sukh Complex,<br>
                     Munshi Puliya, Indira Nagar,<br>
                     Lucknow, 226016</p>
                 </div>
                 <div class="contact-form">
-                    <!-- Update with Web3Forms Access Key when you have it -->
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                         <input type="hidden" name="subject" value="New Website Inquiry - Amitt Senha & Associates">
@@ -404,7 +351,6 @@
                 </div>
             </div>
         </section>
-
     </div>
 
     <!-- JavaScript to Handle Button Clicking -->
@@ -429,7 +375,6 @@
     </script>
 
 </body>
-</html>
   <!-- ========================================== -->
 <!-- COMBINED PORTION (DISCLAIMER POP-UP & LOGIC) -->
 <!-- ========================================== -->
