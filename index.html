@@ -375,54 +375,5 @@
     </script>
 
 </body>
-  <!-- ========================================== -->
-<!-- COMBINED PORTION (DISCLAIMER POP-UP & LOGIC) -->
-<!-- ========================================== -->
 
-<!-- The Disclaimer Pop-up Modal Structure -->
-<div id="disclaimer-modal" class="modal-overlay">
-    <div class="modal-content">
-        <h2>DISCLAIMER</h2>
-        <div class="modal-text">
-            <p>This section of the website pertains to CS Amitt Senha, Practicing Company Secretary. This section is never sent unsolicited to any person. In case any of our associates has referred to this page without the context of a discussion, expression of interest or specific request, please do bring such an act to our notice by dropping an email to <a href="mailto:csamitts@gmail.com">csamitts@gmail.com</a>.</p>
-            
-            <p>This section is meant solely for the purpose of information and not for the purpose of advertising and solicitation of any assignments or professional engagements in any manner. Amitt Senha hereby declares that the contents of this section of the website are true to the best of our knowledge and belief and are in conformity with ICSI (GUIDELINES FOR ADVERTISEMENT BY COMPANY SECRETARIES), 2020.</p>
-            
-            <p>The contents or claims in this section of the website are the sole and exclusive responsibility of Amitt Senha. The Institute of Company Secretaries of India does not own any responsibility whatsoever for such contents or claims by Amitt Senha. The content of this website is for informational purposes only and Amitt Senha shall not be liable for consequences of any action taken by relying on the material/information provided on this website.</p>
-        </div>
-        <button id="agree-button">I Agree & Proceed</button>
-    </div>
-</div>
-
-<!-- The JavaScript Action Logic -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const modal = document.getElementById("disclaimer-modal");
-        const agreeBtn = document.getElementById("agree-button");
-
-        // Check if user already agreed in this session
-        if (localStorage.getItem("disclaimerAgreed") === "true") {
-            modal.style.display = "none"; // Hide it immediately if already agreed
-        } else {
-            modal.style.display = "flex"; // Show it if they haven't agreed
-        }
-
-        // When the user clicks "I Agree"
-        agreeBtn.addEventListener("click", function() {
-            localStorage.setItem("disclaimerAgreed", "true"); // Save agreement
-            modal.style.display = "none"; // Close the pop-up and reveal the site
-        });
-    });
-</script>
-  <!-- ... Your existing website content (text, images, footer, etc.) is up here ... -->
-
-    <!-- Paste the combined block right here -->
-    <div id="disclaimer-modal" class="modal-overlay">
-        <!-- ... content ... -->
-    </div>
-    <script>
-        // ... script logic ...
-    </script>
-
-</body>
 </html>
