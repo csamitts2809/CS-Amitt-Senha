@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-</html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> CS Amitt Senha </title>
+    <title>CS Amitt Senha | Practising Company Secretary</title>
     <style>
-        /* Basic Reset and Styling */
+        /* ========================================== */
+        /* Basic Reset and Layout Styling             */
+        /* ========================================== */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -198,6 +200,93 @@
             background-color: #bfa030;
         }
 
+        /* ========================================== */
+        /* DISCLAIMER POP-UP STYLES                   */
+        /* ========================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999; /* Ensures it sits above sticky nav bar */
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            text-align: justify;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            border-top: 6px solid #d32f2f;
+        }
+
+        .modal-content h2 {
+            color: #d32f2f;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 22px;
+            letter-spacing: 1px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .modal-text {
+            color: #333333;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .modal-text p {
+            margin-bottom: 15px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        #agree-button {
+            background-color: #d32f2f;
+            color: #ffffff;
+            border: none;
+        }
+
+        #agree-button:hover {
+            background-color: #b71c1c;
+        }
+
+        #disagree-button {
+            background-color: #ffffff;
+            color: #666666;
+            border: 1px solid #cccccc;
+        }
+
+        #disagree-button:hover {
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
@@ -206,9 +295,25 @@
 </head>
 <body>
 
+    <!-- Disclaimer Modal Overlay -->
+    <div id="disclaimer-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>DISCLAIMER</h2>
+            <div class="modal-text">
+                <p>The contents of this website are intended solely for informational purposes and do not constitute professional, legal, financial, or secretarial advice. Visitors are advised not to act upon any information contained herein without seeking specific professional advice based on their individual facts and circumstances.</p>
+                <p>Accessing or using this website, including sending inquiries through it, does not create a professional-client relationship between the visitor and the CS Amitt Senha Practising Company Secretary. Such a relationship shall arise only upon formal engagement through a written engagement letter or other mutually agreed terms.</p>
+                <p>We shall not be liable for any loss, damage, liability, or consequences arising from reliance on the information available on this website.</p>
+            </div>
+            <div class="modal-buttons">
+                <button id="disagree-button" class="modal-btn">Disagree</button>
+                <button id="agree-button" class="modal-btn">I Agree & Proceed</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
-        <div class="logo"> CS Amitt Senha </div>
+        <div class="logo">CS Amitt Senha</div>
         <div class="nav-links">
             <a href="#about">About Me</a>
             <a href="#services">Our Services</a>
@@ -217,6 +322,7 @@
         </div>
     </nav>
 
+    <!-- Main Content Container -->
     <div class="container">
         
         <!-- Hero Section -->
@@ -231,7 +337,6 @@
             <div class="about-box">
                 <div class="about-text">
                     <p>I, <strong>Amitt Senha</strong>, am the founder of our Firm and recently commenced practice in 2021. I am a qualified Company Secretary and admitted to practice vide registration no. <strong>24969</strong> by The Institute of Company Secretaries of India (ICSI). In addition to this, I am a qualified lawyer with a total experience of more than 15 years.</p>
-                    
                     <p>Before entering dynamic active practice, I had a vast experience having worked with corporates like Stock Exchanges, Shipping, Real Estate, etc. My last stint was as Company Secretary and Legal lead with Gwalior Smart City Development Corporation Limited, a prestigious joint venture with Central and State Governments.</p>
                     
                     <div class="highlight-bar">
@@ -239,18 +344,16 @@
                     </div>
 
                     <p>In addition to the standard corporate compliance experience, we are rendering specialized services in the areas of Corporate Laws, Corporate Governance issues, drafting/vetting of agreements with merchants, distributors, retailers, Non-Disclosure Agreements (NDAs), Employment contracts, and Corporate Restructuring. With a vast network of associates spread across various cities in India, we seamlessly deal with Intellectual Property Rights (IPRs), FEMA regulations, Listing compliances, and funding of Corporates, apart from routine incorporation of companies and annual filings with the Ministry of Corporate Affairs (MCA).</p>
-                    
                     <p>The strategic combination of deep-dive corporate expertise and local market knowledge enables us to remain highly competitive without ever compromising on quality deliverables.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Corporate & Regulatory Advisory Services Section -->
+        <!-- Services Section -->
         <section id="services">
             <h2>Corporate & Regulatory Advisory Services</h2>
             <p>Click on any capability below to review our focus parameters and execution framework:</p>
             
-            <!-- 3x3 Grid Buttons Layout -->
             <div class="services-menu">
                 <button class="service-btn active" onclick="showService('incorporation', this)">Company Incorporation & Business Structuring</button>
                 <button class="service-btn" onclick="showService('retainership', this)">Compliance Retainership Services</button>
@@ -263,9 +366,7 @@
                 <button class="service-btn" onclick="showService('business-adv', this)">Business Advisory & Special Assignments</button>
             </div>
 
-            <!-- Content Display Area -->
             <div class="service-display-box">
-                
                 <!-- 1. Company Incorporation & Business Structuring -->
                 <div id="incorporation" class="service-content active">
                     <h3>Company Incorporation & Business Structuring</h3>
@@ -319,7 +420,6 @@
                     <h3>Business Advisory & Special Assignments</h3>
                     <p>Every business faces unique challenges requiring practical and legally sound solutions. We provide customized advisory services on corporate restructuring, capital transactions, governance matters, strategic regulatory planning, and other corporate law-related assignments. By combining legal insight with commercial understanding, we help businesses address complex situations efficiently and effectively.</p>
                 </div>
-
             </div>
         </section>
 
@@ -329,7 +429,7 @@
             <div class="contact-grid">
                 <div class="contact-details">
                     <h3>Get In Touch</h3>
-                    <p><strong>Firm Name:</strong> CS Amitt Senha </p>
+                    <p><strong>Firm Name:</strong> CS Amitt Senha</p>
                     <p><strong>Email:</strong> <a href="mailto:csamitts@gmail.com">csamitts@gmail.com</a></p>
                     <p><strong>Mobile:</strong> <a href="tel:+919594493342">+91 9594493342</a></p>
                     <p><strong>LinkedIn Profile:</strong> <a href="https://linkedin.com/in/amitt-senha-cs" target="_blank">linkedin.com/in/amitt-senha-cs ↗</a></p>
@@ -341,7 +441,7 @@
                 <div class="contact-form">
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="0a7b05d8-bc13-4d6b-ae4b-569ce9c7318e">
-                        <input type="hidden" name="subject" value="New Website Inquiry - CS Amitt Senha ">
+                        <input type="hidden" name="subject" value="New Website Inquiry - CS Amitt Senha">
                         
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
@@ -353,181 +453,53 @@
         </section>
     </div>
 
-    <!-- JavaScript to Handle Button Clicking -->
+    <!-- JavaScript Execution Logic -->
     <script>
+        // Tab switching logic for the services section
         function showService(serviceId, element) {
-            // Hide all service blocks
             var contents = document.getElementsByClassName('service-content');
             for (var i = 0; i < contents.length; i++) {
                 contents[i].classList.remove('active');
             }
 
-            // Remove active style from all buttons
             var buttons = document.getElementsByClassName('service-btn');
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove('active');
             }
 
-            // Show selected service block and highlight its button
             document.getElementById(serviceId).classList.add('active');
             element.classList.add('active');
         }
-    </script>
 
-</body>
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Amitt Senha | Practising Company Secretary</title>
-    <style>
-        /* ========================================== */
-        /* DISCLAIMER POP-UP STYLES                   */
-        /* ========================================== */
-        
-        /* Full-screen background overlay that locks the page */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Dark transparent background */
-            backdrop-filter: blur(5px); /* Blurs out the main website behind it */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999999; /* Higher than absolutely everything else */
-        }
-
-        /* The white box container for the text */
-        .modal-content {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 600px;
-            width: 90%;
-            text-align: justify;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-            border-top: 6px solid #d32f2f; /* Professional red accent top border */
-            font-family: Arial, sans-serif;
-        }
-
-        /* Disclaimer Title */
-        .modal-content h2 {
-            color: #d32f2f; /* Bold Red Title */
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 22px;
-            letter-spacing: 1px;
-        }
-
-        /* Legal Body Text */
-        .modal-text {
-            color: #333333; /* Dark gray for easy readability */
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .modal-text p {
-            margin-bottom: 15px;
-        }
-
-        /* Container for the control buttons */
-        .modal-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Common Button Properties */
-        .modal-btn {
-            flex: 1;
-            padding: 12px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
-
-        /* Agree Action Button (Red) */
-        #agree-button {
-            background-color: #d32f2f;
-            color: #ffffff;
-            border: none;
-        }
-
-        #agree-button:hover {
-            background-color: #b71c1c;
-        }
-
-        /* Disagree Action Button (Outline Grey) */
-        #disagree-button {
-            background-color: #ffffff;
-            color: #666666;
-            border: 1px solid #cccccc;
-        }
-
-        #disagree-button:hover {
-            background-color: #f5f5f5;
-            color: #333333;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="disclaimer-modal" class="modal-overlay">
-        <div class="modal-content">
-            <h2>DISCLAIMER</h2>
-            
-            <div class="modal-text">
-                <p>The contents of this website are intended solely for informational purposes and do not constitute professional, legal, financial, or secretarial advice. Visitors are advised not to act upon any information contained herein without seeking specific professional advice based on their individual facts and circumstances.</p>
-                
-                <p>Accessing or using this website, including sending inquiries through it, does not create a professional-client relationship between the visitor and the CS Amitt Senha Practising Company Secretary. Such a relationship shall arise only upon formal engagement through a written engagement letter or other mutually agreed terms.</p>
-                
-                <p>We shall not be liable for any loss, damage, liability, or consequences arising from reliance on the information available on this website.</p>
-            </div>
-
-            <div class="modal-buttons">
-                <button id="disagree-button" class="modal-btn">Disagree</button>
-                <button id="agree-button" class="modal-btn">I Agree & Proceed</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
+        // Disclaimer action configurations
         document.addEventListener("DOMContentLoaded", function() {
             const modal = document.getElementById("disclaimer-modal");
             const agreeBtn = document.getElementById("agree-button");
             const disagreeBtn = document.getElementById("disagree-button");
 
-            // Forces the disclaimer modal to show EVERY single time the page is entered
             modal.style.display = "flex";
 
-            // If user clicks "I Agree & Proceed"
             agreeBtn.addEventListener("click", function() {
-                modal.style.display = "none"; // Simply hides the pop-up to show your site
+                modal.style.display = "none"; 
             });
 
-            // If user clicks "Disagree"
             disagreeBtn.addEventListener("click", function() {
-                // Completely replaces the entire web page content with a blank white display
                 document.documentElement.innerHTML = `
                     <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <title>Access Denied</title>
                     </head>
-                    <body style="background-color: #ffffff; margin: 0; padding: 0;">
-                        </body>
+                    <body style="background-color: #ffffff; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; color: #666;">
+                        <div style="text-align: center;">
+                            <h2>Access Denied</h2>
+                            <p>You must agree to the disclaimer terms to view this website.</p>
+                        </div>
+                    </body>
                     </html>
                 `;
             });
         });
     </script>
 </body>
-
 </html>
