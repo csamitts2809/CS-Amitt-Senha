@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-</html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> CS Amitt Senha </title>
+    <title>CS Amitt Senha | Home</title>
     <style>
-        /* Basic Reset and Styling */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             color: #333;
-            background-color: #f9f9f9;
+            background-image: url('wp.jpej');
+            background-size: 50vmin;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #ffffff;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: #002b49; /* Deep Professional Blue */
+            background-color: #002b49; 
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -43,17 +47,15 @@
         }
 
         .nav-links a:hover {
-            color: #d4af37; /* Gold accent */
+            color: #d4af37; 
         }
 
-        /* Main Container */
         .container {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -65,9 +67,9 @@
 
         .hero h1 { margin-bottom: 10px; }
 
-        /* Sections Layout */
         section {
             margin-bottom: 50px;
+            scroll-margin-top: 100px;
         }
 
         h2 {
@@ -77,15 +79,14 @@
             margin-bottom: 20px;
         }
 
-        /* About Me Styling */
-        .about-box {
-            background-color: white;
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.96);
             padding: 35px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
-        .about-text p {
+        .content-box p {
             margin-bottom: 15px;
             text-align: justify;
         }
@@ -98,711 +99,69 @@
             font-weight: 500;
         }
 
-        /* Services Grid Layout */
-        .services-menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .service-btn {
-            background-color: white;
-            color: #002b49;
-            border: 2px solid #002b49;
-            padding: 15px 20px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: all 0.3s ease;
+        /* Testimonials Styles */
+        .testimonials-section h2 {
+            color: #d32f2f;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ffb300;
         }
 
-        .service-btn:hover, .service-btn.active {
-            background-color: #002b49;
-            color: white;
-        }
-
-        /* Content Display Box */
-        .service-display-box {
-            background-color: white;
-            padding: 35px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 5px solid #d4af37;
-        }
-
-        .service-content {
-            display: none; /* Hidden by default */
-        }
-
-        .service-content.active {
-            display: block; /* Show active content */
-            animation: fadeIn 0.4s ease;
-        }
-
-        .service-content h3 {
-            color: #002b49;
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-
-        /* Contact Us Section */
-        .contact-section {
-            background-color: #002b49;
-            color: white;
-            padding: 40px;
-            border-radius: 8px;
-        }
-
-        .contact-grid {
+        .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
         }
 
-        .contact-details a {
-            color: #d4af37;
-            text-decoration: none;
+        @media (max-width: 600px) {
+            .reviews-grid { grid-template-columns: 1fr; }
+        }
+
+        .review-text-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #d32f2f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .reviewer-name { font-weight: bold; font-size: 16px; color: #333333; }
+        .review-date { font-size: 13px; color: #777777; }
+        .review-stars { color: #ffb300; font-size: 18px; margin-bottom: 12px; }
+        .rating-number { font-size: 14px; color: #555555; font-weight: bold; margin-left: 5px; }
+
+        .review-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .tag {
+            background-color: #f1f8e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 500;
         }
 
-        .contact-details a:hover {
-            text-decoration: underline;
-        }
+        .review-body { font-size: 14px; line-height: 1.6; color: #444444; margin: 0; text-align: justify; }
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        .contact-form button {
-            background-color: #d4af37;
-            color: #002b49;
-            border: none;
-            padding: 12px 25px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .contact-form button:hover {
-            background-color: #bfa030;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo"> CS Amitt Senha </div>
-        <div class="nav-links">
-            <a href="#about">About Me</a>
-            <a href="#services">Our Services</a>
-            <a href="#contact">Contact Us</a>
-            <a href="https://linkedin.com/in/amitt-senha-cs" target="_blank" style="color: #00a0dc;">LinkedIn ↗</a>
-            <a href="#reviews">Our Testimonials</a>
-        </div>
-    </nav>
-
-    <div class="container">
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Professional Corporate & Secretarial Services</h1>
-            <p>Ensuring absolute compliance, governance, and strategic legal clarity for your business.</p>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about">
-            <h2>About Founder</h2>
-            <div class="about-box">
-                <div class="about-text">
-                    <p>I, <strong>Amitt Senha</strong>, am the founder of our Firm and recently commenced practice in 2021. I am a qualified Company Secretary and admitted to practice vide registration no. <strong>24969</strong> by The Institute of Company Secretaries of India (ICSI). In addition to this, I am a qualified lawyer with a total experience of more than 15 years.</p>
-
-                    <p>Before entering dynamic active practice, I had a vast experience having worked with corporates like Stock Exchanges, Shipping, Real Estate, etc. My last stint was as Company Secretary and Legal lead with Gwalior Smart City Development Corporation Limited, a prestigious joint venture with Central and State Governments.</p>
-
-                    <div class="highlight-bar">
-                        Our ultimate aim is to build long-term relationships with all our clients. We believe that the absolute essence of building such a relationship is the uncompromising quality of service and the targeted expertise that we provide.
-                    </div>
-
-                    <p>In addition to the standard corporate compliance experience, we are rendering specialized services in the areas of Corporate Laws, Corporate Governance issues, drafting/vetting of agreements with merchants, distributors, retailers, Non-Disclosure Agreements (NDAs), Employment contracts, and Corporate Restructuring. With a vast network of associates spread across various cities in India, we seamlessly deal with Intellectual Property Rights (IPRs), FEMA regulations, Listing compliances, and funding of Corporates, apart from routine incorporation of companies and annual filings with the Ministry of Corporate Affairs (MCA).</p>
-
-                    <p>The strategic combination of deep-dive corporate expertise and local market knowledge enables us to remain highly competitive without ever compromising on quality deliverables.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Corporate & Regulatory Advisory Services Section -->
-        <section id="services">
-            <h2>Corporate & Regulatory Advisory Services</h2>
-            <p>Click on any capability below to review our focus parameters and execution framework:</p>
-
-            <!-- 3x3 Grid Buttons Layout -->
-            <div class="services-menu">
-                <button class="service-btn active" onclick="showService('incorporation', this)">Business Setup & Structuring</button>
-                <button class="service-btn" onclick="showService('retainership', this)">Compliance Retainership Services</button>
-                <button class="service-btn" onclick="showService('due-diligence', this)">Due Diligence</button>
-                <button class="service-btn" onclick="showService('governance-adv', this)">Corporate Governance Advisory</button>
-                <button class="service-btn" onclick="showService('fema', this)">FEMA & Cross-Border Compliance Services</button>
-                <button class="service-btn" onclick="showService('fundraising', this)">Fundraising </button>
-                <button class="service-btn" onclick="showService('ipr', this)">Intellectual Property Rights (IPR) Support</button>
-                <button class="service-btn" onclick="showService('sec-audit', this)">Secretarial Audit & Compliance Management</button>
-                <button class="service-btn" onclick="showService('business-adv', this)">Business Advisory & Special Assignments</button>
-            </div>
-
-            <!-- Content Display Area -->
-            <div class="service-display-box">
-
-                <!-- 1. Business Setup & Structuring -->
-                <div id="incorporation" class="service-content active">
-                    <h3>Business Setup & Structuring</h3>
-                    <p>Every successful business begins with the right legal foundation. We assist entrepreneurs, startups, family businesses, and investors in establishing suitable business structures, including Private Limited Companies, Public Companies, One Person Companies (OPCs), Section 8 Companies, and Limited Liability Partnerships (LLPs). Our services cover end-to-end incorporation support, regulatory registrations, documentation, and post-incorporation compliance guidance, ensuring a smooth and legally compliant business launch.</p>
-                </div>
-
-                <!-- 2. Compliance Retainership Services -->
-                <div id="retainership" class="service-content">
-                    <h3>Compliance Retainership Services</h3>
-                    <p>Regulatory compliance is not a one-time activity but an ongoing responsibility. Our retainership services provide businesses with continuous professional support for corporate, secretarial, and regulatory matters. Acting as your extended compliance partner, we assist in maintaining statutory records, conducting periodic compliance reviews, advising management on regulatory developments, and ensuring timely filings under applicable laws.</p>
-                </div>
-
-                <!-- 3. Due Diligence -->
-                <div id="due-diligence" class="service-content">
-                    <h3> Due Diligence</h3>
-                    <p>In today’s dynamic business environment, informed decisions require thorough verification and risk assessment. We conduct comprehensive legal and secretarial due diligence for mergers, acquisitions, investments, fundraising transactions, and strategic business decisions. Our reviews focus on statutory compliance, corporate records, governance practices, regulatory risks, and potential liabilities, helping stakeholders make confident and informed decisions.</p>
-                </div>
-
-                <!-- 4. Corporate Governance Advisory -->
-                <div id="governance-adv" class="service-content">
-                    <h3>Corporate Governance Advisory</h3>
-                    <p>Strong governance frameworks create sustainable businesses and inspire stakeholder confidence. We assist companies in implementing robust corporate governance practices that promote transparency, accountability, ethical decision-making, and regulatory compliance. Our advisory services support boards, promoters, and management teams in establishing governance structures aligned with business objectives and regulatory expectations.</p>
-                </div>
-
-                <!-- 5. FEMA & Cross-Border Compliance Services -->
-              <section class="fema-services-section">
-    <div class="fema-container">
-        
-        <h2 class="fema-main-title">FEMA & Cross-Border Compliance Services</h2>
-        
-        <p class="fema-intro-text">
-            In an increasingly globalized business environment, cross-border transactions are subject to a complex framework of regulatory, secretarial, taxation, and reporting requirements. Non-compliance with the provisions of the Foreign Exchange Management Act, 1999 (FEMA) and related regulations can result in significant penalties and regulatory challenges.
-        </p>
-        
-        <p class="fema-intro-text text-highlight">
-            We provide comprehensive advisory and compliance support to Indian companies, foreign investors, overseas entities, NRIs, and start-ups engaged in international business activities. Our services are designed to ensure seamless compliance with FEMA, Reserve Bank of India (RBI) regulations, the Companies Act, 2013, and allied laws.
-        </p>
-
-        <h3 class="fema-subtitle">Our Areas of Expertise</h3>
-
-        <div class="fema-grid">
-            
-            <div class="fema-card">
-                <h4>Foreign Direct Investment (FDI)</h4>
-                <ul>
-                    <li>Advisory on entry routes, sectoral caps, and investment structures.</li>
-                    <li>Assistance in issue and transfer of shares to non-residents.</li>
-                    <li>FEMA compliance for rights issues, bonus issues, ESOPs, and convertible instruments.</li>
-                    <li>Filing and reporting of FDI transactions through the RBI reporting framework.</li>
-                    <li>Compliance support relating to downstream investments.</li>
-                </ul>
-            </div>
-
-            <div class="fema-card">
-                <h4>Overseas Direct Investment (ODI)</h4>
-                <ul>
-                    <li>Structuring and advisory for overseas acquisitions and investments.</li>
-                    <li>Compliance under the Overseas Investment Rules and Regulations.</li>
-                    <li>Reporting requirements for foreign subsidiaries and joint ventures.</li>
-                    <li>Assistance in remittance documentation and RBI compliances.</li>
-                </ul>
-            </div>
-
-            <div class="fema-card">
-                <h4>External Commercial Borrowings (ECB)</h4>
-                <ul>
-                    <li>Advisory on ECB eligibility, borrowing limits, and end-use restrictions.</li>
-                    <li>Assistance in documentation and reporting requirements.</li>
-                    <li>Compliance monitoring throughout the tenure of the borrowing.</li>
-                </ul>
-            </div>
-
-            <div class="fema-card">
-                <h4>NRI & Foreign National Advisory</h4>
-                <ul>
-                    <li>FEMA advisory relating to acquisition, transfer, and inheritance of assets in India.</li>
-                    <li>Investment and repatriation-related compliances.</li>
-                    <li>Advisory on NRI shareholding and ownership structures.</li>
-                    <li>Assistance in opening and operating business ventures in India.</li>
-                </ul>
-            </div>
-
-            <div class="fema-card">
-                <h4>Cross-Border Mergers, Acquisitions & Restructuring</h4>
-                <ul>
-                    <li>FEMA due diligence and transaction structuring.</li>
-                    <li>Regulatory compliance for mergers, demergers, and business reorganizations involving foreign entities.</li>
-                    <li>Secretarial and corporate law support for cross-border transactions.</li>
-                </ul>
-            </div>
-
-            <div class="fema-card">
-                <h4>Foreign Investment Reporting & RBI Compliances</h4>
-                <ul>
-                    <li>Filing of statutory returns and reporting forms with regulatory authorities.</li>
-                    <li>Assistance in valuation-related compliance requirements.</li>
-                    <li>Regular compliance monitoring and advisory support.</li>
-                    <li>FEMA audit support and compliance reviews.</li>
-                </ul>
-            </div>
-
-            <div class="fema-card">
-                <h4>Secretarial Compliance Support</h4>
-                <ul>
-                    <li>Board and shareholder approvals for foreign investment transactions.</li>
-                    <li>Drafting of resolutions, notices, agreements, and corporate documents.</li>
-                    <li>Compliance under the Companies Act, 2013 relating to foreign investments and overseas transactions.</li>
-                    <li>Maintenance of statutory records and corporate governance support.</li>
-                </ul>
-            </div>
-
-            <div class="fema-card">
-                <h4>FEMA Due Diligence & Compliance Audits</h4>
-                <ul>
-                    <li>Review of historical FEMA compliances.</li>
-                    <li>Identification of non-compliances and risk assessment.</li>
-                    <li>Advisory on compounding of contraventions and regularization of transactions.</li>
-                    <li>FEMA compliance health checks for investors and businesses.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="fema-footer-box">
-            <h4>International Tax & Regulatory Coordination</h4>
-            <p>In association with experienced tax professionals and subject matter experts, we facilitate:</p>
-            <ul>
-                <li>Tax-efficient structuring of cross-border transactions.</li>
-                <li>Advisory on withholding tax obligations and remittance-related tax requirements.</li>
-                <li>Assistance relating to Double Taxation Avoidance Agreements (DTAAs).</li>
-                <li>Coordination for transfer pricing, international taxation, and related compliance matters.</li>
-                <li>Support in obtaining tax opinions and certifications wherever required.</li>
-            </ul>
-        </div>
-
-    </div>
-</section>
-
-<style>
-    .fema-services-section {
-        background-color: transparent; /* Allows your background wallpaper 'wp.jpej' to show through */
-        padding: 60px 20px;
-        font-family: 'Segoe UI', Arial, sans-serif;
-    }
-
-    .fema-container {
-        max-width: 1140px;
-        margin: 0 auto;
-        background: rgba(255, 255, 255, 0.96); /* Very slight transparency to see background elegantly */
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .fema-main-title {
-        color: #000000; /* Matching corporate black */
-        font-size: 28px;
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 20px;
-        border-bottom: 3px solid #000000;
-        padding-bottom: 10px;
-        display: inline-block;
-    }
-
-    .fema-intro-text {
-        font-size: 15px;
-        line-height: 1.7;
-        color: #444444;
-        text-align: justify;
-        margin-bottom: 15px;
-    }
-
-    .text-highlight {
-        font-weight: 500;
-        color: #222222;
-        border-left: 4px solid #000000;
-        padding-left: 15px;
-        background-color: #fcf8f8;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .fema-subtitle {
-        color: #000000;
-        font-size: 22px;
-        margin-top: 40px;
-        margin-bottom: 25px;
-        font-weight: 600;
-    }
-
-    /* 2-Column Desktop Grid that collapses beautifully to 1-column on mobile */
-    .fema-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        gap: 25px;
-        margin-bottom: 40px;
-    }
-
-    @media (max-width: 600px) {
-        .fema-grid {
-            grid-template-columns: 1fr;
-        }
-        .fema-container {
-            padding: 20px;
-        }
-    }
-
-    /* Individual Expertise Cards Layout */
-    .fema-card {
-        background: #ffffff;
-        border: 1px solid #eef0f2;
-        border-radius: 6px;
-        padding: 24px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .fema-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(211, 47, 47, 0.1);
-        border-color: #ffcdd2;
-    }
-
-    .fema-card h4 {
-        color: #000000;
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-size: 17px;
-        font-weight: 600;
-    }
-
-    /* Bullet List Styling */
-    .fema-container ul {
-        margin: 0;
-        padding-left: 20px;
-    }
-
-    .fema-container li {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #555555;
-        margin-bottom: 10px;
-    }
-
-    .fema-container li::marker {
-        color: #d32f2f; /* Red bullet points */
-    }
-
-    .fema-container li:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Footer Association Section Styling */
-    .fema-footer-box {
-        background-color: #ffffff;
-        border: 1px solid #eef0f2;
-        padding: 25px;
-        border-radius: 6px;
-        margin-top: 30px;
-    }
-
-    .fema-footer-box h4 {
-        color: #000000;
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 18px;
-    }
-
-    .fema-footer-box p {
-        font-size: 14.5px;
-        color: #333333;
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-weight: 500;
-    }
-</style>
-                </div>
-
-                <!-- 6.  Fundraising -->
-                <div id="fundraising" class="service-content">
-                    <h3>Fundraising </h3>
-                    <p>Access to capital is critical for business growth. Through our network of professionals and investment associates, we facilitate connections between businesses and potential investors. We assist in preparing investment-ready documentation, conducting preliminary compliance reviews, and coordinating with stakeholders throughout the fundraising process, helping businesses present themselves effectively to prospective investors.</p>
-                </div>
-
-                <!-- 7. Intellectual Property Rights (IPR) Support -->
-                <div id="ipr" class="service-content">
-                    <h3>Intellectual Property Rights (IPR) Support</h3>
-                    <p>Innovation and brand value are among the most valuable assets of any business. Through our dedicated team of IPR professionals, we assist clients in protecting and managing intellectual property, including trademarks, copyrights, patents, and related rights. Our services are designed to safeguard business identity, innovation, and competitive advantage in an increasingly knowledge-driven economy.</p>
-                </div>
-
-                <!-- 8. Secretarial Audit & Regulatory Compliance Management -->
-                <div id="sec-audit" class="service-content">
-                    <h3>Secretarial Audit & Regulatory Compliance Management</h3>
-                    <p>Compliance is a critical component of corporate sustainability. We provide comprehensive secretarial and regulatory compliance support, including compliance audits, corporate restructuring assistance, board and shareholder meeting support, statutory documentation, and advisory services under various corporate laws. Our focus is to minimize regulatory risk and enable businesses to operate with confidence.</p>
-                </div>
-
-                <!-- 9. Business Advisory & Special Assignments -->
-                <div id="business-adv" class="service-content">
-                    <h3>Business Advisory & Special Assignments</h3>
-                    <p>Every business faces unique challenges requiring practical and legally sound solutions. We provide customized advisory services on corporate restructuring, capital transactions, governance matters, strategic regulatory planning, and other corporate law-related assignments. By combining legal insight with commercial understanding, we help businesses address complex situations efficiently and effectively.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact Us Section -->
-        <section id="contact" class="contact-section">
-            <h2>Contact Us</h2>
-            <div class="contact-grid">
-                <div class="contact-details">
-                    <h3>Get In Touch</h3>
-                    <p><strong>Firm Name:</strong> CS Amitt Senha </p>
-                    <p><strong>Email:</strong> <a href="mailto:csamitts@gmail.com">csamitts@gmail.com</a></p>
-                    <p><strong>Mobile:</strong> <a href="tel:+919594493342">+91 9594493342</a></p>
-                    <p><strong>LinkedIn Profile:</strong> <a href="https://linkedin.com/in/amitt-senha-cs" target="_blank">linkedin.com/in/amitt-senha-cs ↗</a></p>
-                    <p><strong>Office Address:</strong><br>
-                    R-120 RGF, Sukh Complex,<br>
-                    Munshi Puliya, Indira Nagar,<br>
-                    Lucknow, 226016</p>
-                </div>
-                <div class="contact-form">
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="0a7b05d8-bc13-4d6b-ae4b-569ce9c7318e">
-                        <input type="hidden" name="subject" value="New Website Inquiry - CS Amitt Senha">
-                        <input type="hidden" name="access_key" value="0a7b05d8-bc13-4d6b-ae4b-569ce9c7318e">
-                        <input type="hidden" name="subject" value="New Website Inquiry - CS Amitt Senha">
-
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message or Consultation Request" rows="4" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- JavaScript to Handle Button Clicking -->
-    <script>
-        function showService(serviceId, element) {
-            // Hide all service blocks
-            var contents = document.getElementsByClassName('service-content');
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].classList.remove('active');
-            }
-
-            // Remove active style from all buttons
-            var buttons = document.getElementsByClassName('service-btn');
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
-
-            // Show selected service block and highlight its button
-            document.getElementById(serviceId).classList.add('active');
-            element.classList.add('active');
-        }
-    </script>
-     <section id="reviews">
-<div class="testimonials-section">
-    <h2>Client Testimonials</h2>
-    <div class="reviews-grid">
-        
-        <div class="review-text-card">
-            <div class="review-card-header">
-                <span class="reviewer-name">Vivek</span>
-                <span class="review-date">03 Jan 2025</span>
-            </div>
-            <div class="review-stars">★★★★★ <span class="rating-number">5.0</span></div>
-            <div class="review-tags">
-                <span class="tag">👍 Experienced provider</span>
-                <span class="tag">👍 Realistic approach</span>
-                <span class="tag">👍 Proper explanation</span>
-                <span class="tag">👍 Easily accessible</span>
-            </div>
-            <p class="review-body">"Amitt Senha is an excellent company registration consultant with a realistic approach and experienced providers. They offer proper explanations and are easily accessible, making the process hassle-free. Their expertise in banking, finance, and other services makes them a top choice for business owners."</p>
-        </div>
-
-        <div class="review-text-card">
-            <div class="review-card-header">
-                <span class="reviewer-name">Sreejith Nair</span>
-                <span class="review-date">09 Jun 2024</span>
-            </div>
-            <div class="review-stars">★★★★★ <span class="rating-number">5.0</span></div>
-            <div class="review-tags">
-                <span class="tag">👍 Expert services</span>
-                <span class="tag">👍 Reasonable fees</span>
-                <span class="tag">👍 Easily accessible</span>
-            </div>
-            <p class="review-body">"Prompt service and expert guidance Sreejith Nair"</p>
-        </div>
-
-        <div class="review-text-card">
-            <div class="review-card-header">
-                <span class="reviewer-name">Ketan Godkhindi</span>
-                <span class="review-date">17 Jan 2023</span>
-            </div>
-            <div class="review-stars">★★★★ <span class="rating-number">4.0</span></div>
-            <p class="review-body">"We have been working since 2014 on varied projects and the experience as well as insights, Amitt brings is amazing. His problem solving abilities are definitely good for business and acts as it's enabler."</p>
-        </div>
-
-        <div class="review-text-card">
-            <div class="review-card-header">
-                <span class="reviewer-name">Yash Agarwal</span>
-                <span class="review-date">20 Mar 2025</span>
-            </div>
-            <div class="review-stars">★★★★★ <span class="rating-number">5.0</span></div>
-            <p class="review-body">"Excellent services"</p>
-        </div>
-
-    </div>
-</div>
-
-<style>
-    .testimonials-section {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-    }
-
-    .testimonials-section h2 {
-        color: #d32f2f; /* Matching your firm's red corporate theme */
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    /* Grid layout: 2 columns on desktop, collapses to 1 column on mobile screens */
-    .reviews-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        gap: 20px;
-    }
-
-    @media (max-width: 500px) {
-        .reviews-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    /* Individual Card Properties */
-    .review-text-card {
-        background-color: #ffffff;
-        border-radius: 8px;
-        padding: 25px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        border-left: 5px solid #d32f2f; /* Red side accent line */
-        display: flex;
-        flex-direction: column;
-    }
-
-    .review-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-
-    .reviewer-name {
-        font-weight: bold;
-        font-size: 16px;
-        color: #333333;
-    }
-
-    .review-date {
-        font-size: 13px;
-        color: #777777;
-    }
-
-    /* Stars coloring */
-    .review-stars {
-        color: #ffb300; /* Gold color */
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    .rating-number {
-        font-size: 14px;
-        color: #555555;
-        font-weight: bold;
-        margin-left: 5px;
-    }
-
-    /* Green tag layouts */
-    .review-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 15px;
-    }
-
-    .tag {
-        background-color: #f1f8e9;
-        color: #2e7d32; /* Deep green text */
-        border: 1px solid #c8e6c9;
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    /* Review description text formatting */
-    .review-body {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #444444;
-        margin: 0;
-        text-align: justify;
-    }
-</style>
-</body>
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Amitt Senha | Practising Company Secretary</title>
-    <style>
-        /* ========================================== */
-        /* DISCLAIMER POP-UP STYLES                   */
-        /* ========================================== */
-
-        /* Full-screen background overlay that locks the page */
+        /* Disclaimer Modal */
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Dark transparent background */
-            backdrop-filter: blur(5px); /* Blurs out the main website behind it */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999999; /* Higher than absolutely everything else */
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 999999;
         }
 
-        /* The white box container for the text */
         .modal-content {
             background-color: #ffffff;
             padding: 30px;
@@ -811,72 +170,19 @@
             width: 90%;
             text-align: justify;
             box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-            border-top: 6px solid #d32f2f; /* Professional red accent top border */
-            font-family: Arial, sans-serif;
+            border-top: 6px solid #d32f2f;
         }
 
-        /* Disclaimer Title */
-        .modal-content h2 {
-            color: #d32f2f; /* Bold Red Title */
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 22px;
-            letter-spacing: 1px;
-        }
-
-        /* Legal Body Text */
-        .modal-text {
-            color: #333333; /* Dark gray for easy readability */
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .modal-text p {
-            margin-bottom: 15px;
-        }
-
-        /* Container for the control buttons */
-        .modal-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Common Button Properties */
-        .modal-btn {
-            flex: 1;
-            padding: 12px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
-
-        /* Agree Action Button (Red) */
-        #agree-button {
-            background-color: #d32f2f;
-            color: #ffffff;
-            border: none;
-        }
-
-        #agree-button:hover {
-            background-color: #b71c1c;
-        }
-
-        /* Disagree Action Button (Outline Grey) */
-        #disagree-button {
-            background-color: #ffffff;
-            color: #666666;
-            border: 1px solid #cccccc;
-        }
-
-        #disagree-button:hover {
-            background-color: #f5f5f5;
-            color: #333333;
-        }
+        .modal-content h2 { color: #d32f2f; text-align: center; border: none; margin-bottom: 20px; font-size: 22px; }
+        .modal-text { color: #333333; font-size: 14px; line-height: 1.6; margin-bottom: 25px; }
+        .modal-text p { margin-bottom: 15px; }
+        .modal-buttons { display: flex; gap: 15px; }
+        .modal-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; text-align: center; }
+        
+        #agree-button { background-color: #d32f2f; color: #ffffff; border: none; }
+        #agree-button:hover { background-color: #b71c1c; }
+        #disagree-button { background-color: #ffffff; color: #666666; border: 1px solid #cccccc; }
+        #disagree-button:hover { background-color: #f5f5f5; }
     </style>
 </head>
 <body>
@@ -884,15 +190,11 @@
     <div id="disclaimer-modal" class="modal-overlay">
         <div class="modal-content">
             <h2>DISCLAIMER</h2>
-
             <div class="modal-text">
                 <p>The contents of this website are intended solely for informational purposes and do not constitute professional, legal, financial, or secretarial advice. Visitors are advised not to act upon any information contained herein without seeking specific professional advice based on their individual facts and circumstances.</p>
-
                 <p>Accessing or using this website, including sending inquiries through it, does not create a professional-client relationship between the visitor and the CS Amitt Senha Practising Company Secretary. Such a relationship shall arise only upon formal engagement through a written engagement letter or other mutually agreed terms.</p>
-
                 <p>We shall not be liable for any loss, damage, liability, or consequences arising from reliance on the information available on this website.</p>
             </div>
-
             <div class="modal-buttons">
                 <button id="disagree-button" class="modal-btn">Disagree</button>
                 <button id="agree-button" class="modal-btn">I Agree & Proceed</button>
@@ -900,33 +202,110 @@
         </div>
     </div>
 
+    <nav>
+        <div class="logo">CS Amitt Senha</div>
+        <div class="nav-links">
+            <a href="index.html#about">About Me</a>
+            <a href="index.html#why-choose-us">Why Choose Us</a>
+            <a href="services.html">Our Services</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="https://linkedin.com/in/amitt-senha-cs" target="_blank" style="color: #00a0dc;">LinkedIn ↗</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Professional Corporate & Secretarial Services</h1>
+            <p>Ensuring absolute compliance, governance, and strategic legal clarity for your business.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Founder</h2>
+            <div class="content-box">
+                <p>I, <strong>Amitt Senha</strong>, am the founder of our Firm and recently commenced practice in 2021. I am a qualified Company Secretary and admitted to practice vide registration no. <strong>24969</strong> by The Institute of Company Secretaries of India (ICSI). In addition to this, I am a qualified lawyer with a total experience of more than 15 years.</p>
+                <p>Before entering dynamic active practice, I had a vast experience having worked with corporates like Stock Exchanges, Shipping, Real Estate, etc. My last stint was as Company Secretary and Legal lead with Gwalior Smart City Development Corporation Limited, a prestigious joint venture with Central and State Governments.</p>
+                <div class="highlight-bar">
+                    Our ultimate aim is to build long-term relationships with all our clients. We believe that the absolute essence of building such a relationship is the uncompromising quality of service and the targeted expertise that we provide.
+                </div>
+                <p>In addition to the standard corporate compliance experience, we are rendering specialized services in the areas of Corporate Laws, Corporate Governance issues, drafting/vetting of agreements with merchants, distributors, retailers, Non-Disclosure Agreements (NDAs), Employment contracts, and Corporate Restructuring. With a vast network of associates spread across various cities in India, we seamlessly deal with Intellectual Property Rights (IPRs), FEMA regulations, Listing compliances, and funding of Corporates, apart from routine incorporation of companies and annual filings with the Ministry of Corporate Affairs (MCA).</p>
+                <p>The strategic combination of deep-dive corporate expertise and local market knowledge enables us to remain highly competitive without ever compromising on quality deliverables.</p>
+            </div>
+        </section>
+
+        <section id="why-choose-us">
+            <h2>Why Choose Us</h2>
+            <div class="content-box" style="min-height: 150px;">
+                <p style="color: #888; text-align: center; padding-top: 40px;">[Insert your specific professional core strengths and competitive parameters here]</p>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <h2>Client Testimonials</h2>
+            <div class="reviews-grid">
+                <div class="review-text-card">
+                    <div class="review-card-header">
+                        <span class="reviewer-name">Vivek</span>
+                        <span class="review-date">03 Jan 2025</span>
+                    </div>
+                    <div class="review-stars">★★★★★ <span class="rating-number">5.0</span></div>
+                    <div class="review-tags">
+                        <span class="tag">👍 Experienced provider</span>
+                        <span class="tag">👍 Realistic approach</span>
+                        <span class="tag">👍 Proper explanation</span>
+                        <span class="tag">👍 Easily accessible</span>
+                    </div>
+                    <p class="review-body">"Amitt Senha is an excellent company registration consultant with a realistic approach and experienced providers. They offer proper explanations and are easily accessible, making the process hassle-free. Their expertise in banking, finance, and other services makes them a top choice for business owners."</p>
+                </div>
+
+                <div class="review-text-card">
+                    <div class="review-card-header">
+                        <span class="reviewer-name">Sreejith Nair</span>
+                        <span class="review-date">09 Jun 2024</span>
+                    </div>
+                    <div class="review-stars">★★★★★ <span class="rating-number">5.0</span></div>
+                    <div class="review-tags">
+                        <span class="tag">👍 Expert services</span>
+                        <span class="tag">👍 Reasonable fees</span>
+                        <span class="tag">👍 Easily accessible</span>
+                    </div>
+                    <p class="review-body">"Prompt service and expert guidance Sreejith Nair"</p>
+                </div>
+
+                <div class="review-text-card">
+                    <div class="review-card-header">
+                        <span class="reviewer-name">Ketan Godkhindi</span>
+                        <span class="review-date">17 Jan 2023</span>
+                    </div>
+                    <div class="review-stars">★★★★ <span class="rating-number">4.0</span></div>
+                    <p class="review-body">"We have been working since 2014 on varied projects and the experience as well as insights, Amitt brings is amazing. His problem solving abilities are definitely good for business and acts as it's enabler."</p>
+                </div>
+
+                <div class="review-text-card">
+                    <div class="review-card-header">
+                        <span class="reviewer-name">Yash Agarwal</span>
+                        <span class="review-date">20 Mar 2025</span>
+                    </div>
+                    <div class="review-stars">★★★★★ <span class="rating-number">5.0</span></div>
+                    <p class="review-body">"Excellent services"</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const modal = document.getElementById("disclaimer-modal");
             const agreeBtn = document.getElementById("agree-button");
             const disagreeBtn = document.getElementById("disagree-button");
-
-            // Forces the disclaimer modal to show EVERY single time the page is entered
             modal.style.display = "flex";
-
-            // If user clicks "I Agree & Proceed"
-            agreeBtn.addEventListener("click", function() {
-                modal.style.display = "none"; // Simply hides the pop-up to show your site
-            });
-
-            // If user clicks "Disagree"
+            agreeBtn.addEventListener("click", function() { modal.style.display = "none"; });
             disagreeBtn.addEventListener("click", function() {
-                // Completely replaces the entire web page content with a blank white display
                 document.documentElement.innerHTML = `
                     <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <title>Access Denied</title>
-                    </head>
-                    <body style="background-color: #ffffff; margin: 0; padding: 0;">
-                        </body>
-                    </html>
-                `;
+                    <head><meta charset="UTF-8"><title>Access Denied</title></head>
+                    <body style="background-color: #ffffff; margin: 0; padding: 0;"></body>
+                    </html>`;
             });
         });
     </script>
