@@ -19,23 +19,6 @@
             background-color: #ffffff;
         }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #002b49; 
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .logo { color: white; font-size: 1.4rem; font-weight: bold; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
-        .nav-links a:hover { color: #d4af37; }
-
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 
         /* Contact Section Theme */
@@ -114,16 +97,22 @@
 </head>
 <body>
 
-    <nav>
-        <div class="logo">CS Amitt Senha</div>
-        <div class="nav-links">
-            <a href="index.html#about">About Me</a>
-            <a href="index.html#why-choose-us">Why Choose Us</a>
-            <a href="services.html">Our Services</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="index.html#testimonials">Testimonials</a>
+    <div style="background-color: #002b49; padding: 1.2rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="max-width: 1100px; margin: 0 auto; color: white; font-size: 1.5rem; font-weight: bold; font-family: 'Segoe UI', Arial, sans-serif;">
+            CS Amitt Senha
         </div>
-    </nav>
+    </div>
+
+    <div style="background-color: #ffffff; padding: 1rem 2rem; border-bottom: 1px solid #eef0f2; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', Arial, sans-serif;">
+            <a href="index.html#about" style="color: #333333; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; flex: 1;">About Me</a>
+            <a href="index.html#why-choose-us" style="color: #333333; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; flex: 1;">Why Choose Us</a>
+            <a href="services.html" style="color: #333333; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; flex: 1;">Our Services</a>
+            <a href="contact.html" style="color: #333333; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; flex: 1;">Contact Us</a>
+            <a href="index.html#testimonials" style="color: #333333; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; flex: 1;">Testimonials</a>
+            <a href="https://linkedin.com/in/amitt-senha-cs" target="_blank" style="color: #00a0dc; text-decoration: none; font-weight: 600; font-size: 0.95rem; text-align: center; flex: 1;">LinkedIn ↗</a>
+        </div>
+    </div>
 
     <div class="container">
         <section class="contact-section">
@@ -147,7 +136,6 @@
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="0a7b05d8-bc13-4d6b-ae4b-569ce9c7318e">
                         <input type="hidden" name="subject" value="New Website Inquiry - CS Amitt Senha">
-                        
                         <input type="hidden" name="redirect" value="https://csamitts2809.github.io/csamitts.github.io/contact.html">
 
                         <input type="text" name="name" placeholder="Your Name" required>
@@ -161,6 +149,9 @@
             </div>
         </section>
     </div>
+
+</body>
+</html>
 
 </body>
 </html>
