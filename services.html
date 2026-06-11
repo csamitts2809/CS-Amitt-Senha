@@ -71,7 +71,7 @@
             text-align: center;
         }
 
-        /* --- THE NEW 3x3 IMAGE CARD GRID --- */
+        /* --- THE 3x3 CARD GRID --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -89,7 +89,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 25px 20px;
             text-align: center;
             border: 2px solid transparent;
         }
@@ -105,16 +105,20 @@
             background-color: #f0f4f8;
         }
 
-        .service-card img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
+        /* SVG Icon styling matching your theme palette */
+        .service-card svg {
+            width: 70px;
+            height: 70px;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover svg {
+            transform: scale(1.1);
         }
 
         .service-card h4 {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #002b49;
             font-weight: 700;
         }
@@ -172,47 +176,89 @@
         <div class="services-grid">
             
             <div class="service-card active" onclick="showService('incorporation', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/5630860135809941675" alt="Rocket">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M48 16c0 0-4-8-16-8s-16 8-16 8v16c0 8 6 14 16 16 10-2 16-8 16-16V16z" fill="#f0f4f8"/>
+                    <circle cx="32" cy="26" r="6" fill="#d4af37"/>
+                    <path d="M16 40c-4 0-6 4-6 4v8h12v-6"/>
+                    <path d="M48 40c4 0 6 4 6 4v8H42v-6"/>
+                </svg>
                 <h4>Business Setup & Structuring</h4>
             </div>
 
             <div class="service-card" onclick="showService('retainership', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/4740256577950959766" alt="Compliance">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M32 4S14 8 14 22c0 14 18 26 18 26s18-12 18-26C50 8 32 4 32 4z" fill="#f0f4f8"/>
+                    <circle cx="32" cy="24" r="10" fill="#ffffff" stroke="#002b49"/>
+                    <path d="M32 18v6l4 2" stroke="#d4af37" stroke-width="3"/>
+                </svg>
                 <h4>Compliance Retainership</h4>
             </div>
 
             <div class="service-card" onclick="showService('due-diligence', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/5819121371978534389" alt="Magnifying Glass">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="14" y="10" width="28" height="38" rx="4" fill="#f0f4f8"/>
+                    <path d="M20 20h10M20 28h16M20 36h12" stroke-linecap="round"/>
+                    <circle cx="42" cy="42" r="9" fill="#ffffff" stroke="#d4af37" stroke-width="3"/>
+                    <path d="M48 48l8 8" stroke="#d4af37" stroke-width="4"/>
+                </svg>
                 <h4>Due Diligence</h4>
             </div>
 
             <div class="service-card" onclick="showService('governance-adv', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/2110736196572896911" alt="Governance">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 44s4-8 12-8 12 8 12 8H10z" fill="#f0f4f8"/>
+                    <circle cx="22" cy="26" r="5"/>
+                    <path d="M38 12h14v36H38V12z" fill="#ffffff"/>
+                    <path d="M45 12V6h2v6M38 24h14M38 34h14" stroke="#d4af37"/>
+                </svg>
                 <h4>Corporate Governance</h4>
             </div>
 
             <div class="service-card" onclick="showService('fema', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/463581474538098220" alt="World Map">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="32" cy="32" r="24" fill="#f0f4f8"/>
+                    <path d="M8 32h48M32 8v48" stroke="#b0c4de"/>
+                    <path d="M16 20s6 4 16 4 16-4 16-4M16 44s6-4 16-4 16 4 16 4" stroke="#d4af37"/>
+                </svg>
                 <h4>FEMA & Cross-Border</h4>
             </div>
 
             <div class="service-card" onclick="showService('fundraising', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/9221770795907212578" alt="Investment">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 50l12-14 10 8 22-24" stroke="#d4af37" stroke-width="3.5"/>
+                    <circle cx="22" cy="36" r="4" fill="#002b49"/>
+                    <circle cx="32" cy="44" r="4" fill="#002b49"/>
+                    <circle cx="54" cy="20" r="5" fill="#002b49"/>
+                    <path d="M6 54h52" stroke="#002b49"/>
+                </svg>
                 <h4>Fundraising</h4>
             </div>
 
             <div class="service-card" onclick="showService('ipr', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/11140619930850047082" alt="Brain Lightbulb">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M32 12c-10 0-16 6-16 16 0 6 4 11 7 14l3 8h12l3-8c3-3 7-8 7-14 0-10-6-16-16-16z" fill="#f0f4f8"/>
+                    <path d="M28 56h8M30 60h4" stroke-width="3"/>
+                    <circle cx="32" cy="28" r="4" fill="#d4af37" stroke="none"/>
+                </svg>
                 <h4>Intellectual Property (IPR)</h4>
             </div>
 
             <div class="service-card" onclick="showService('sec-audit', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/16318997533591934162" alt="Law Books">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 12h32v40H16V12z" fill="#f0f4f8"/>
+                    <path d="M24 12v40M16 20h32M16 28h32" stroke="#d4af37"/>
+                    <path d="M42 44l10 10M46 40l6 6" stroke-width="3"/>
+                </svg>
                 <h4>Secretarial Audit</h4>
             </div>
 
             <div class="service-card" onclick="showService('business-adv', this)">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/13141715473418247558" alt="Compass Strategy">
+                <svg viewBox="0 0 64 64" fill="none" stroke="#002b49" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="32" cy="32" r="22" fill="#ffffff"/>
+                    <path d="M32 14l4 14 14 4-14 4-4 14-4-14-14-4 14-4z" fill="#f0f4f8"/>
+                    <path d="M32 14v36M14 32h36" stroke="#b0c4de" stroke-width="1.5"/>
+                    <path d="M32 24l3 8-3 8-3-8z" fill="#d4af37"/>
+                </svg>
                 <h4>Business Advisory</h4>
             </div>
 
@@ -295,21 +341,17 @@
 
     <script>
         function showService(serviceId, element) {
-            // Hide all content
             var contents = document.getElementsByClassName('service-content');
             for (var i = 0; i < contents.length; i++) {
                 contents[i].classList.remove('active');
             }
-            // Deactivate all cards
             var cards = document.getElementsByClassName('service-card');
             for (var i = 0; i < cards.length; i++) {
                 cards[i].classList.remove('active');
             }
-            // Show selected content and activate card
             document.getElementById(serviceId).classList.add('active');
             element.classList.add('active');
             
-            // Auto-scroll to the display box on mobile
             if(window.innerWidth < 768) {
                 document.querySelector('.service-display-box').scrollIntoView({ behavior: 'smooth' });
             }
